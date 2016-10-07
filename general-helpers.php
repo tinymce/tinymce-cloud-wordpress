@@ -1,13 +1,7 @@
 <?php
 function getValidPlugins() {
-    global $wp_version;
-    $validPlugins = array('powerpaste', 'tinymcespellchecker', 'codesample');
-    if((strpos($wp_version, '4.4') !== false) && (strpos($wp_version, '4.4') == 0)) {
-    //    No other plugins are available
-    } else if((strpos($wp_version, '4.5') !== false) && (strpos($wp_version, '4.5') == 0)) {
-        array_push($validPlugins, 'a11ychecker', 'mentions', 'advcode');
-    }
-
+//    global $wp_version;
+    $validPlugins = array('powerpaste');
     return $validPlugins;
 }
 

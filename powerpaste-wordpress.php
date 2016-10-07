@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: PowerPaste for WordPress
-Description: Enables the PowerPaste plugin in TinyMCE, the visual editor in WordPress.
+Plugin Name: TinyMCE PowerPaste for WordPress
+Description: Enables PowerPaste functionality in TinyMCE, the visual editor in WordPress
 Version: 1.0
 Author: Ephox
-Author URI: http://www.tinymce.com
-Text Domain: tinymce_enterprise
+Author URI: https://www.ephox.com/tinymce/powerpaste-for-wordpress/
+Text Domain: powerpaste_wordpress
 */
 
 if ( ! defined( 'TENTP_URL' ) ) define( 'TENTP_URL', plugin_dir_url( __FILE__ ) );
@@ -28,21 +28,6 @@ function tinymce_enterprise_activate () {
         'powerpaste_block_drop' => false,
         'powerpaste_allow_local_images' => true
     );
-//    $tinymce_enterprise_options_array = array(
-//        'version' => '1.0',
-//        'enable_powerpaste' => 'off',
-//        'enable_tinymcespellchecker' => 'off',
-//        'enable_a11ychecker' => 'off',
-//        'enable_mentions' => 'off',
-//        'enable_advcode' => 'off',
-//        'enable_codesample' => 'off',
-//        'powerpaste_word_import' => 'clean',
-//        'powerpaste_html_import' => 'merge',
-//        'powerpaste_block_drop' => false,
-//        'powerpaste_allow_local_images' => true,
-//        'spellchecker_rpc_url' => '',
-//        'spellchecker_api_key' => ''
-//    );
 
     //Don't overwrite existing options if plugin was installed previously???
     //TODO: What to do on upgrade?  Perhaps store this plugin version in settings and add only new options?
@@ -65,7 +50,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE Enterprise Settings Page', 'TinyMCE Enterprise', 'manage_options', 'tinymce_enterprise_settings_menu', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE PowerPaste for WordPress Settings Page', 'TinyMCE PowerPaste for WordPress', 'manage_options', 'tinymce_enterprise_settings_menu', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 
@@ -93,32 +78,17 @@ add_action( 'wp_enqueue_scripts', 'tmce_add_prism_scripts' );
 require_once "general-helpers.php";
 $rootDirForEntPlugins = plugin_dir_path(__FILE__) . 'plugins/';
 $tinymce_enterprise_options = get_option('tinymce_enterprise_options');
-error_log('$tinymce_enterprise_options object is of type:');
-error_log(gettype($tinymce_enterprise_options));
-if(is_array ($tinymce_enterprise_options)) {
-    error_log('$tinymce_enterprise_options IS an array');
-} else {
-    error_log('$tinymce_enterprise_options is NOT an array');
-}
+//error_log('$tinymce_enterprise_options object is of type:');
+//error_log(gettype($tinymce_enterprise_options));
+//if(is_array ($tinymce_enterprise_options)) {
+//    error_log('$tinymce_enterprise_options IS an array');
+//} else {
+//    error_log('$tinymce_enterprise_options is NOT an array');
+//}
 $validPlugins = getValidPlugins();
 
 if(shouldLoadPlugin('powerpaste', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)){
     require "plugin-loaders/powerpaste.php";
 }
-//if(shouldLoadPlugin('a11ychecker', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)) {
-//    require "plugin-loaders/accessibilitychecker.php";
-//}
-//if(shouldLoadPlugin('advcode', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)) {
-//    require "plugin-loaders/advcode.php";
-//}
-//if(shouldLoadPlugin('codesample', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)) {
-//    require "plugin-loaders/codesample.php";
-//}
-//if(shouldLoadPlugin('mentions', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)){
-//    require "plugin-loaders/mentions.php";
-//}
-//if(shouldLoadPlugin('tinymcespellchecker', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)) {
-//    require "plugin-loaders/spellchecker.php";
-//}
 
 ?>

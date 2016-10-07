@@ -16,16 +16,16 @@ var excludedFiles = ['!../gulp{,/**}', '!../node_modules{,/**}','!../install-ins
     '!../dist', '!../dist/**/*', '!../todo.md', '!../readme.md', '!../.gitignore'];
 
 gulp.task('default', function() {
-    return gutil.log('Gulp is running!')
+    return gutil.log('Gulp is running!');
 });
 
 gulp.task('WordPress 4.5.2 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress452/wp-content/plugins/tinymce-enterprise';
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress452/wp-content/plugins/powerpaste-wordpress';
     moveFiles(wpPluginsFolder);
 });
 
 gulp.task('WordPress 4.6.1 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress461/wp-content/plugins/tinymce-enterprise';
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress461/wp-content/plugins/powerpaste-wordpress';
     moveFiles(wpPluginsFolder);
 });
 
@@ -80,7 +80,7 @@ gulp.task('Create Install Readme', ['Generate HTML Body'], function () {
 
 gulp.task('Zip Files', ['Move Files for Zip', 'Move Plugin Folder Readme', 'Create Install Readme'],  function () {
     return gulp.src('../dist/code_files/**/*')
-        .pipe(zip('tinymce-enterprise.zip'))
+        .pipe(zip('powerpaste-wordpress.zip'))
         .pipe(gulp.dest('../dist/zip'));
 });
 

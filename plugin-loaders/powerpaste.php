@@ -53,7 +53,7 @@ function add_powerpaste_options($opt) {
 
     }
 
-    $opt['images_upload_url'] = plugins_url() . '/tinymce-enterprise/imageHandler.php?path='
+    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?path='
         . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);
 
     return $opt;
