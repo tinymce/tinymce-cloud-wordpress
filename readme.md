@@ -12,7 +12,7 @@ WordPress (4.5+).  This plugin has been tested against the following WordPress v
  * @Mentions
  * Accessibility Checker
  
- **WordPress 4.6.x / TinyMCE 4.4.x**
+**WordPress 4.6.x / TinyMCE 4.4.x**
   * PowerPaste
   * Spellchecking
   * @Mentions
