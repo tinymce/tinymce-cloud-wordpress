@@ -1,0 +1,45 @@
+<h1 id="installing-tinymce-enterprise-for-wordpress">Installing TinyMCE Enterprise for WordPress</h1>
+<h2 id="installing-the-tinymce-enterprise-for-wordpress-plugin">Installing the TinyMCE Enterprise for WordPress Plugin</h2>
+<p>The TinyMCE Enterprise for WordPress plugin is provided as a ZIP file named <code>tinymce-enterprise.zip</code>.
+You install this plugin (<code>tinymce-enterprise.zip</code>) as you would install any other WordPress
+plugin.</p>
+<h3 id="a-note-on-file-permissions">A Note on File Permissions</h3>
+<p>In some operating systems you may find that the file permissions on the TinyMCE Enterprise for WordPress Plugin
+folder (and/or files) won&#39;t allow WordPress to read the files.  This will manifest itself as the plugin not showing
+in the admin screen.  If you see this issue make sure that &quot;Everyone&quot; can read the<code>tinymce-enterprise</code> folder and
+all of its child files/folders.</p>
+<h2 id="enabling-the-tinymce-enterprise-plugins">Enabling the TinyMCE Enterprise Plugins</h2>
+<p>By default PowerPaste is enabled when you install and activate the TinyMCE Enterprise for WordPress plugin.
+You can modify the default settings of the plugin by visiting the TinyMCE Enterprise for WordPress plugin
+settings page in the WordPress Admin page.</p>
+<p>In the Settings area of the Admin page (<code>http://&lt;your_wordpress_instance&gt;/wp-admin/options-general.php</code>)
+you should now see a link for TinyMCE Enterprise.  Clicking this will take you to the settings for
+TinyMCE Enterprise for WordPress.</p>
+<h2 id="confirm-permissions-on-wp-content-uploads-folder">Confirm permissions on <code>wp-content/uploads</code> folder</h2>
+<p><strong><em>The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the <code>wp-content</code>
+folder for this plugin to function properly.</em></strong></p>
+<p>If you use PowerPaste to paste images into TinyMCE (enabled by default) you need to make sure that this plugin
+can write files to the <code>wp-content/uploads</code> folder (and all of its child folders).  This is necessary to allow
+PowerPaste to upload and store images that are pasted into TinyMCE from MS Word and MS Excel.  The same permissions
+are used by the WordPress Media Library code to allow it to upload and store images.</p>
+<p>When pasting MS Word content if the content contains an image, that image should result in an <code>&lt;img&gt;</code> tag with
+a URL pointing to a file within the <code>wp-content/uploads</code> folder.  For example:</p>
+<p><code>&lt;img src=&quot;http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png&quot; width=&quot;212&quot; height=&quot;53&quot; /&gt;</code></p>
+<p>If you instead see a <code>Base64</code> or <code>Blob</code> encoded image in the HTML source look in your PHP error log.  If the PHP error log
+states something like this:</p>
+<pre><code>PHP Warning:  move_uploaded_file(): Unable to move &#39;/private/var/tmp/phpf6d4n9&#39;
+to &#39;&lt;path_to_wordpress_install&gt;/wordpress/wp-content/uploads/2016/06/blobid0-1465592547-775.png&#39;
+in &lt;path_to_wordpress_install&gt;/wordpress/wp-content/plugins/tinymce-enterprise/imageHandler.php
+</code></pre><p>...then you have a permissions issue.  This error implies that this plugin&#39;s image upload script (<code>imageHandler.php</code>) cannot write to the
+<code>uploads</code> folder or one of its child folders.</p>
+<p>You can resolve this error by doing one or both of the following:</p>
+<ul>
+<li>Ensure that the owner or the <code>imageHandler.php</code> script is the same as the core WordPress PHP files.  If your WordPress install is working then the PHP files of the
+core WordPress system are properly setup.  Mirroring those settings with <code>chmod</code>/<code>chown</code> or similar should address the permissions of the  PHP script.</li>
+<li>Modify the settings for the <code>wp-content</code> folder (and its child folders) so that the user that runs the <code>imageHandler.php</code> script has write access to 
+this folder. </li>
+</ul>
+<p><strong><em>If you need assistance with fixing file permissions please open a support case at: <a href="http://support.ephox.com">http://support.ephox.com</a></em></strong></p>
+<h2 id="obtaining-support">Obtaining Support</h2>
+<p>If you have issues with the installation or use of this plugin please visit our support site at: <a href="http://support.ephox.com">http://support.ephox.com</a></p>
+<p>Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  <a href="https://support.ephox.com/registration">https://support.ephox.com/registration</a></p>

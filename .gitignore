@@ -1,0 +1,12 @@
+#WebStorm
+.idea/
+
+#TinyMCE Editor files
+plugins/*
+!plugins/readme.md
+
+#NPM Modules
+node_modules
+
+#Folder for creating ZIP for distribution
+dist/
