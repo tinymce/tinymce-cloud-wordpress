@@ -1,24 +1,23 @@
-# Installing TinyMCE Enterprise for WordPress
+# Installing TinyMCE PowerPaste for WordPress
 
-## Installing the TinyMCE Enterprise for WordPress Plugin
-The TinyMCE Enterprise for WordPress plugin is provided as a ZIP file named `tinymce-enterprise.zip`.
-You install this plugin (`tinymce-enterprise.zip`) as you would install any other WordPress
+The TinyMCE PowerPaste for WordPress plugin is provided as a ZIP file named `powerpaste-wordpress.zip`.
+You install this plugin (`powerpaste-wordpress.zip`) as you would install any other WordPress
 plugin.
 
 ### A Note on File Permissions
-In some operating systems you may find that the file permissions on the TinyMCE Enterprise for WordPress Plugin
+In some operating systems you may find that the file permissions on the TinyMCE PowerPaste for WordPress plugin
 folder (and/or files) won't allow WordPress to read the files.  This will manifest itself as the plugin not showing
-in the admin screen.  If you see this issue make sure that "Everyone" can read the`tinymce-enterprise` folder and
+in the admin screen.  If you see this issue make sure that "Everyone" can read the`powerpaste-wordpress` folder and
 all of its child files/folders.
 
-## Enabling the TinyMCE Enterprise Plugins
-By default PowerPaste is enabled when you install and activate the TinyMCE Enterprise for WordPress plugin.
-You can modify the default settings of the plugin by visiting the TinyMCE Enterprise for WordPress plugin
+## Enabling the TinyMCE PowerPaste for WordPress plugin
+By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste for WordPress plugin.
+You can modify the default settings of the plugin by visiting the TinyMCE PowerPaste for WordPress plugin
 settings page in the WordPress Admin page.
 
 In the Settings area of the Admin page (`http://<your_wordpress_instance>/wp-admin/options-general.php`)
-you should now see a link for TinyMCE Enterprise.  Clicking this will take you to the settings for
-TinyMCE Enterprise for WordPress.
+you should now see a link for TinyMCE PowerPaste for WordPress.  Clicking this will take you to the settings for
+TinyMCE PowerPaste for WordPress.
 
 
 ## Confirm permissions on `wp-content/uploads` folder
@@ -45,15 +44,12 @@ to '<path_to_wordpress_install>/wordpress/wp-content/uploads/2016/06/blobid0-146
 in <path_to_wordpress_install>/wordpress/wp-content/plugins/tinymce-enterprise/imageHandler.php
 ```
 
-...then you have a permissions issue.  This error implies that this plugin's image upload script (`imageHandler.php`) cannot write to the
-`uploads` folder or one of its child folders.
+...then you have a permissions issue.  This error implies that this plugin's image upload script (`imageHandler.php`) cannot write to the `uploads` folder or one of its child folders.
 
 You can resolve this error by doing one or both of the following:
 
-* Ensure that the owner or the `imageHandler.php` script is the same as the core WordPress PHP files.  If your WordPress install is working then the PHP files of the
- core WordPress system are properly setup.  Mirroring those settings with `chmod`/`chown` or similar should address the permissions of the  PHP script.
-* Modify the settings for the `wp-content` folder (and its child folders) so that the user that runs the `imageHandler.php` script has write access to 
-this folder. 
+* Ensure that the owner or the `imageHandler.php` script is the same as the core WordPress PHP files.  If your WordPress install is working then the PHP files of the core WordPress system are properly setup.  Mirroring those settings with `chmod`/`chown` or similar should address the permissions of the  PHP script. 
+* Modify the settings for the `wp-content` folder (and its child folders) so that the user that runs the `imageHandler.php` script has write access to this folder. 
 
 ***If you need assistance with fixing file permissions please open a support case at: http://support.ephox.com***
 
