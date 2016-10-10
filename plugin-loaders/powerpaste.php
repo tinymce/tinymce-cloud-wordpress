@@ -1,5 +1,4 @@
 <?php
-error_log('In plugin-loaders/powerpaste.php');
 /* Add the TinyMCE Enterprise PowerPaste Plugin */
 add_filter('mce_external_plugins', 'add_powerpaste_plugin', 1000);
 add_filter('tiny_mce_before_init', 'disable_paste_plugin', 1001);
@@ -26,9 +25,9 @@ function disable_paste_plugin($opt) {
 
 function add_powerpaste_options($opt) {
     $tinymce_enterprise_settings = get_option('tinymce_enterprise_options');
-    $uploads = wp_upload_dir();
-    $upload_path = $uploads['path'];
-    $upload_url = $uploads['url'];
+//    $uploads = wp_upload_dir();
+//    $upload_path = $uploads['path'];
+//    $upload_url = $uploads['url'];
     global $post;
     $post_id = $post->ID;
     if($tinymce_enterprise_settings['powerpaste_word_import']) {
@@ -53,8 +52,10 @@ function add_powerpaste_options($opt) {
 
     }
 
-    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?path='
-        . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);
+    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?postid=' . urlencode($post_id);
+
+//    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?path='
+//        . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);
 
     return $opt;
 }

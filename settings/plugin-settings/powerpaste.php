@@ -1,6 +1,6 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
-    <h2 class="title">PowerPaste Settings</h2>
+<!--    <h2 class="title">TinyMCE PowerPaste Settings</h2>-->
     <p>For more details on these settings and how they impact PowerPaste please see the
         <strong><a href="https://www.tinymce.com/docs/enterprise/paste-from-word/" target="_blank">product documentation</a></strong>
     </p>

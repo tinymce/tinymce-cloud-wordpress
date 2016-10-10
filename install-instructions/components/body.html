@@ -1,20 +1,19 @@
-<h1 id="installing-tinymce-enterprise-for-wordpress">Installing TinyMCE Enterprise for WordPress</h1>
-<h2 id="installing-the-tinymce-enterprise-for-wordpress-plugin">Installing the TinyMCE Enterprise for WordPress Plugin</h2>
-<p>The TinyMCE Enterprise for WordPress plugin is provided as a ZIP file named <code>tinymce-enterprise.zip</code>.
-You install this plugin (<code>tinymce-enterprise.zip</code>) as you would install any other WordPress
+<h1 id="installing-tinymce-powerpaste">Installing TinyMCE PowerPaste</h1>
+<p>The TinyMCE PowerPaste plugin is provided as a ZIP file named <code>powerpaste-wordpress.zip</code>.
+You install this plugin (<code>powerpaste-wordpress.zip</code>) as you would install any other WordPress
 plugin.</p>
 <h3 id="a-note-on-file-permissions">A Note on File Permissions</h3>
-<p>In some operating systems you may find that the file permissions on the TinyMCE Enterprise for WordPress Plugin
+<p>In some operating systems you may find that the file permissions on the TinyMCE PowerPaste plugin
 folder (and/or files) won&#39;t allow WordPress to read the files.  This will manifest itself as the plugin not showing
-in the admin screen.  If you see this issue make sure that &quot;Everyone&quot; can read the<code>tinymce-enterprise</code> folder and
+in the admin screen.  If you see this issue make sure that &quot;Everyone&quot; can read the<code>powerpaste-wordpress</code> folder and
 all of its child files/folders.</p>
-<h2 id="enabling-the-tinymce-enterprise-plugins">Enabling the TinyMCE Enterprise Plugins</h2>
-<p>By default PowerPaste is enabled when you install and activate the TinyMCE Enterprise for WordPress plugin.
-You can modify the default settings of the plugin by visiting the TinyMCE Enterprise for WordPress plugin
+<h2 id="enabling-the-tinymce-powerpaste-plugin">Enabling the TinyMCE PowerPaste plugin</h2>
+<p>By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste plugin.
+You can modify the default settings of the plugin by visiting the TinyMCE PowerPaste plugin
 settings page in the WordPress Admin page.</p>
 <p>In the Settings area of the Admin page (<code>http://&lt;your_wordpress_instance&gt;/wp-admin/options-general.php</code>)
-you should now see a link for TinyMCE Enterprise.  Clicking this will take you to the settings for
-TinyMCE Enterprise for WordPress.</p>
+you should now see a link for TinyMCE PowerPaste.  Clicking this will take you to the settings for
+TinyMCE PowerPaste.</p>
 <h2 id="confirm-permissions-on-wp-content-uploads-folder">Confirm permissions on <code>wp-content/uploads</code> folder</h2>
 <p><strong><em>The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the <code>wp-content</code>
 folder for this plugin to function properly.</em></strong></p>
@@ -30,14 +29,11 @@ states something like this:</p>
 <pre><code>PHP Warning:  move_uploaded_file(): Unable to move &#39;/private/var/tmp/phpf6d4n9&#39;
 to &#39;&lt;path_to_wordpress_install&gt;/wordpress/wp-content/uploads/2016/06/blobid0-1465592547-775.png&#39;
 in &lt;path_to_wordpress_install&gt;/wordpress/wp-content/plugins/tinymce-enterprise/imageHandler.php
-</code></pre><p>...then you have a permissions issue.  This error implies that this plugin&#39;s image upload script (<code>imageHandler.php</code>) cannot write to the
-<code>uploads</code> folder or one of its child folders.</p>
+</code></pre><p>...then you have a permissions issue.  This error implies that this plugin&#39;s image upload script (<code>imageHandler.php</code>) cannot write to the <code>uploads</code> folder or one of its child folders.</p>
 <p>You can resolve this error by doing one or both of the following:</p>
 <ul>
-<li>Ensure that the owner or the <code>imageHandler.php</code> script is the same as the core WordPress PHP files.  If your WordPress install is working then the PHP files of the
-core WordPress system are properly setup.  Mirroring those settings with <code>chmod</code>/<code>chown</code> or similar should address the permissions of the  PHP script.</li>
-<li>Modify the settings for the <code>wp-content</code> folder (and its child folders) so that the user that runs the <code>imageHandler.php</code> script has write access to 
-this folder. </li>
+<li>Ensure that the owner or the <code>imageHandler.php</code> script is the same as the core WordPress PHP files.  If your WordPress install is working then the PHP files of the core WordPress system are properly setup.  Mirroring those settings with <code>chmod</code>/<code>chown</code> or similar should address the permissions of the  PHP script. </li>
+<li>Modify the settings for the <code>wp-content</code> folder (and its child folders) so that the user that runs the <code>imageHandler.php</code> script has write access to this folder. </li>
 </ul>
 <p><strong><em>If you need assistance with fixing file permissions please open a support case at: <a href="http://support.ephox.com">http://support.ephox.com</a></em></strong></p>
 <h2 id="obtaining-support">Obtaining Support</h2>

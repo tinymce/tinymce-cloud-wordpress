@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: TinyMCE PowerPaste for WordPress
+Plugin Name: TinyMCE PowerPaste
 Description: Enables PowerPaste functionality in TinyMCE, the visual editor in WordPress
 Version: 1.0
 Author: Ephox
@@ -50,7 +50,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE PowerPaste for WordPress Settings Page', 'TinyMCE PowerPaste for WordPress', 'manage_options', 'tinymce_enterprise_settings_menu', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE PowerPaste Settings Page', 'TinyMCE PowerPaste', 'manage_options', 'tinymce_enterprise_settings_menu', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 
@@ -78,13 +78,6 @@ add_action( 'wp_enqueue_scripts', 'tmce_add_prism_scripts' );
 require_once "general-helpers.php";
 $rootDirForEntPlugins = plugin_dir_path(__FILE__) . 'plugins/';
 $tinymce_enterprise_options = get_option('tinymce_enterprise_options');
-//error_log('$tinymce_enterprise_options object is of type:');
-//error_log(gettype($tinymce_enterprise_options));
-//if(is_array ($tinymce_enterprise_options)) {
-//    error_log('$tinymce_enterprise_options IS an array');
-//} else {
-//    error_log('$tinymce_enterprise_options is NOT an array');
-//}
 $validPlugins = getValidPlugins();
 
 if(shouldLoadPlugin('powerpaste', $validPlugins, $rootDirForEntPlugins, $tinymce_enterprise_options)){
