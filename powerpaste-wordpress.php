@@ -1,10 +1,11 @@
 <?php
 /*
 Plugin Name: TinyMCE PowerPaste
-Description: Enables PowerPaste functionality in TinyMCE, the visual editor in WordPress
+Plugin URI: https://www.ephox.com/tinymce/powerpaste-for-wordpress/
+Description: PowerPaste cleans content copied from Microsoft Word and the internet so that when you paste the content into WordPress it automatically matches the look and feel of your website. If your content contains images, PowerPaste will include the images and upload them to your Media Library. PowerPaste can also be configured to maintain the styling of your original content.
 Version: 1.0
 Author: Ephox
-Author URI: https://www.ephox.com/tinymce/powerpaste-for-wordpress/
+Author URI: https://www.ephox.com/
 Text Domain: powerpaste_wordpress
 */
 
