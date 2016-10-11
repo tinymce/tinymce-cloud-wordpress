@@ -2,7 +2,7 @@
 
 #### NOTE: For installation details please read installation-steps.md
 
-This plugin allows you to run the TinyMCE Enterprise PowerPaste plugin within
+This plugin allows you to run the TinyMCE PowerPaste plugin within
 WordPress (4.5+).  This plugin has been tested against the following WordPress versions:
 
 
