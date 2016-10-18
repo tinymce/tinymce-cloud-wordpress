@@ -3,14 +3,15 @@ var zip = require('gulp-zip');
 var chmod = require('gulp-chmod');
 var rename = require('gulp-rename');
 var del = require('del');
-var marked = require('gulp-marked');
-var order = require('gulp-order');
+// var marked = require('gulp-marked');
+// var order = require('gulp-order');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
 
 var includedFiles = ['../**/*'];
 var includedPluginFolderReadme = ['../plugins/readme.md'];
-var includedInstallationReadme = ['../install-instructions/installation-steps.md'];  //Will be renamed to readme.md in the final zip
+// var includedInstallationReadme = ['../install-instructions/installation-steps.md'];
+var includedInstallationReadmeTXT = ['../install-instructions/installation-steps.txt'];
 
 var excludedFiles = ['!../gulp{,/**}', '!../node_modules{,/**}','!../install-instructions{,/**}',
     '!../dist', '!../dist/**/*', '!../todo.md', '!../readme.md', '!../.gitignore'];
@@ -34,7 +35,6 @@ function moveFiles(wpPluginsFolder) {
         .pipe(gulp.dest(wpPluginsFolder));
 }
 
-
 gulp.task('Create ZIP for Distribution', ['Move Files for Zip', 'Move Plugin Folder Readme', 'Create Install Readme', 'Zip Files']);
 
 gulp.task('Move Files for Zip', ['Clean dist-code-files'] ,function () {
@@ -44,7 +44,6 @@ gulp.task('Move Files for Zip', ['Clean dist-code-files'] ,function () {
         .pipe(gulp.dest(distributionCodeFilesFolder));
 });
 
-
 gulp.task('Move Plugin Folder Readme', function () {
     var distributionCodeFilesFolder = '../dist/code_files';
     return gulp.src(includedPluginFolderReadme)
@@ -52,29 +51,36 @@ gulp.task('Move Plugin Folder Readme', function () {
         .pipe(gulp.dest(distributionCodeFilesFolder + '/plugins'));
 });
 
-gulp.task('Generate HTML Body', function () {
-    return gulp.src(includedInstallationReadme)
-        .pipe(marked({}))
-        .pipe(rename("body.html"))
-        .pipe(gulp.dest('../install-instructions/components'));
-});
+// gulp.task('Generate HTML Body', function () {
+//     return gulp.src(includedInstallationReadme)
+//         .pipe(marked({}))
+//         .pipe(rename("body.html"))
+//         .pipe(gulp.dest('../install-instructions/components'));
+// });
 
-gulp.task('Create Install Readme', ['Generate HTML Body'], function () {
+// gulp.task('Create Install Readme', ['Generate HTML Body'], function () {
+gulp.task('Create Install Readme', function () {
+    // We are only shipping a TXT file per Blake M.
     console.log('Create Install Readme');
     var distributionCodeFilesFolder = '../dist/code_files';
-    gulp.src('../install-instructions/components/**/*.html')
-        .pipe(order([
-            "header.html",
-            "body.html",
-            "footer.html"
-        ]))
-        .pipe(concat("readme.html"))
-        // .pipe(rename("install-instructions.html"))
-        .pipe(gulp.dest(distributionCodeFilesFolder));
+    // gulp.src('../install-instructions/components/**/*.html')
+    //     .pipe(order([
+    //         "header.html",
+    //         "body.html",
+    //         "footer.html"
+    //     ]))
+    //     .pipe(concat("install-instructions.html"))
+    //     // .pipe(rename("install-instructions.html"))
+    //     .pipe(gulp.dest(distributionCodeFilesFolder));
 
     //Move the original MD file in case anyone prefers that format
-    gulp.src(includedInstallationReadme)
-        .pipe(rename("readme.md"))
+    // gulp.src(includedInstallationReadme)
+    //     .pipe(rename("install-instructions.md"))
+    //     .pipe(gulp.dest(distributionCodeFilesFolder));
+
+    //Move the original TXT file
+    gulp.src(includedInstallationReadmeTXT)
+        .pipe(rename("install-instructions.txt"))
         .pipe(gulp.dest(distributionCodeFilesFolder));
 });
 
@@ -86,8 +92,5 @@ gulp.task('Zip Files', ['Move Files for Zip', 'Move Plugin Folder Readme', 'Crea
 
 gulp.task('Clean dist-code-files', function () {
     // Delete Temp Files & Folders needed to make the distribution ZIP
-    // return del(['../dist/code_files/**', '!../dist/code_files'], {dryRun: true, force: true}).then(paths => {
-    //     console.log('Files and folders that have been deleted:\n', paths.join('\n'));
-    // });
     return del(['../dist/code_files/**', '../dist/zip/**', '!../dist/code_files', '!../dist/zip'], {force: true});
 });

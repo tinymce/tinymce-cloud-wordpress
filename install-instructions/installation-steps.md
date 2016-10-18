@@ -2,7 +2,7 @@
 
 The TinyMCE PowerPaste plugin is provided as a ZIP file named `powerpaste-wordpress.zip`.
 You install this plugin (`powerpaste-wordpress.zip`) as you would install any other WordPress
-plugin.
+plugin.  Guidance for installing WordPress plugins may be found on https://wordpress.org/.
 
 ### A Note on File Permissions
 In some operating systems you may find that the file permissions on the TinyMCE PowerPaste plugin
