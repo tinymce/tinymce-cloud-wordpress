@@ -1,5 +1,4 @@
 var gulp  = require('gulp');
-var zip = require('gulp-zip');
 var chmod = require('gulp-chmod');
 var rename = require('gulp-rename');
 var del = require('del');
@@ -7,6 +6,8 @@ var del = require('del');
 // var order = require('gulp-order');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
+var exec = require('child_process').exec;
+
 
 var includedFiles = ['../**/*'];
 var includedPluginFolderReadme = ['../plugins/readme.md'];
@@ -38,14 +39,14 @@ function moveFiles(wpPluginsFolder) {
 gulp.task('Create ZIP for Distribution', ['Move Files for Zip', 'Move Plugin Folder Readme', 'Create Install Readme', 'Zip Files']);
 
 gulp.task('Move Files for Zip', ['Clean dist-code-files'] ,function () {
-    var distributionCodeFilesFolder = '../dist/code_files';
+    var distributionCodeFilesFolder = '../dist/powerpaste-wordpress';
     return gulp.src(includedFiles.concat(excludedFiles))
         .pipe(chmod(755))
         .pipe(gulp.dest(distributionCodeFilesFolder));
 });
 
 gulp.task('Move Plugin Folder Readme', function () {
-    var distributionCodeFilesFolder = '../dist/code_files';
+    var distributionCodeFilesFolder = '../dist/powerpaste-wordpress';
     return gulp.src(includedPluginFolderReadme)
         .pipe(chmod(755))
         .pipe(gulp.dest(distributionCodeFilesFolder + '/plugins'));
@@ -62,7 +63,7 @@ gulp.task('Move Plugin Folder Readme', function () {
 gulp.task('Create Install Readme', function () {
     // We are only shipping a TXT file per Blake M.
     console.log('Create Install Readme');
-    var distributionCodeFilesFolder = '../dist/code_files';
+    var distributionCodeFilesFolder = '../dist/powerpaste-wordpress';
     // gulp.src('../install-instructions/components/**/*.html')
     //     .pipe(order([
     //         "header.html",
@@ -85,12 +86,10 @@ gulp.task('Create Install Readme', function () {
 });
 
 gulp.task('Zip Files', ['Move Files for Zip', 'Move Plugin Folder Readme', 'Create Install Readme'],  function () {
-    return gulp.src('../dist/code_files/**/*')
-        .pipe(zip('powerpaste-wordpress.zip'))
-        .pipe(gulp.dest('../dist/zip'));
+    return exec('cd ../dist && zip -r ./zip/powerpaste4wordpress_latest.zip ./powerpaste-wordpress/*');
 });
 
 gulp.task('Clean dist-code-files', function () {
     // Delete Temp Files & Folders needed to make the distribution ZIP
-    return del(['../dist/code_files/**', '../dist/zip/**', '!../dist/code_files', '!../dist/zip'], {force: true});
+    return del(['../dist/powerpaste-wordpress/**', '../dist/zip/**', '!../dist/powerpaste-wordpress', '!../dist/zip'], {force: true});
 });

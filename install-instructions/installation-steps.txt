@@ -61,6 +61,23 @@ You can resolve this error by doing one or both of the following:
 
 If you need assistance with fixing file permissions please open a support case at: http://support.ephox.com
 
+Recommended Browsers and the “Local Host Image” dialog box
+==========================================================
+The recommended browsers for TinyMCE PowerPaste for WordPress are Chrome v54+, Firefox v45+ and Internet Explorer v11.
+
+Users with older versions of Chrome, Firefox and IE, as well as all Safari and Edge users, can still install and use the plugin.
+
+Users with non-recommended browsers may see an additional "Local Host Image" dialog prompting for an image paste when attempting to copy and paste content that contains images.
+
+Please note that this dialog requiring a second paste action is not an error, but a necessary additional step due to the way some browsers handle the copy and pasting of images.
+
+To no longer see the “Local Host Image” dialog:
+
+— Chrome, Firefox or IE users should upgrade their browser to meet the minimum version noted above.
+— Safari and Edge users will need to switch to a recommended version of Chrome, Firefox or IE.
+
+Ephox is continuing to work with the relevant browser vendors to improve copy and paste handling for images.
+
 Obtaining Support
 =================
 If you have issues with the installation or use of this plugin please visit our support site at:
