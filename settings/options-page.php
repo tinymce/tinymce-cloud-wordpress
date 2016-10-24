@@ -26,7 +26,7 @@ function tinymce_enterprise_settings_page() {
     }
     ?>
     <p class="submit">
-        <input type="submit" class="button-primary" value="Save Changes" <?php if ($noPluginFoldersPresent) echo 'disabled'; ?>/>
+        <input type="submit" class="button-primary" value="Save Changes" <?php if ($noPluginFolderPresent) echo 'disabled'; ?>/>
     </p>
 </form>
 <?php
