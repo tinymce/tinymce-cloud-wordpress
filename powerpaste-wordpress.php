@@ -51,7 +51,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE PowerPaste Settings Page', 'TinyMCE PowerPaste', 'manage_options', 'tinymce_enterprise_settings_menu', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE PowerPaste Settings Page', 'TinyMCE PowerPaste', 'manage_options', 'powerpaste_wordpress', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 
@@ -74,6 +74,15 @@ function tmce_add_prism_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'tmce_add_prism_scripts' );
 /* End Prism hook */
+
+/* Add link to plugin desc that points to settings */
+function plugin_add_settings_link( $links ) {
+    $settings_link = '<a href="options-general.php?page=powerpaste_wordpress">' . __( 'Settings' ) . '</a>';
+    array_push( $links, $settings_link );
+    return $links;
+}
+$plugin = plugin_basename( __FILE__ );
+add_filter( "plugin_action_links_" . $plugin, 'plugin_add_settings_link' );
 
 /* Which plugins do we actually load */
 require_once "general-helpers.php";
