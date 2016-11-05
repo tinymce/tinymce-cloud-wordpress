@@ -49,13 +49,16 @@ function add_powerpaste_options($opt) {
         $opt['powerpaste_allow_local_images'] = $tinymce_enterprise_settings['powerpaste_allow_local_images'];
     } else {
         $opt['powerpaste_allow_local_images'] = true;
-
     }
 
     $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?postid=' . urlencode($post_id);
 
 //    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?path='
 //        . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);
+
+    // By default WordPress strips all inline styles (TinyMCE plugin - 'wordpress') from
+    // the pasted content, screwing a formatting that we are trying to preserve (TINY-634)
+    $opt['wp_paste_filters'] = false;
 
     return $opt;
 }
