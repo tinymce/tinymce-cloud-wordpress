@@ -67,12 +67,12 @@ function tinymce_enterprise_register_settings () {
 /* End Settings Page */
 
 /* Make sure Prism is in runtime for Codesample plugin */
-function tmce_add_prism_scripts() {
-    wp_enqueue_script( 'prism-js', TENTP_URL . 'prism/prism.js', array(), false, false );
-    wp_enqueue_style( 'prism-css', TENTP_URL . 'prism/prism.css', array(), false, 'all' );
-    wp_enqueue_script( 'run-prism', TENTP_URL . 'prism/run-prism.js', array(), false, true );
-}
-add_action( 'wp_enqueue_scripts', 'tmce_add_prism_scripts' );
+//function tmce_add_prism_scripts() {
+//    wp_enqueue_script( 'prism-js', TENTP_URL . 'prism/prism.js', array(), false, false );
+//    wp_enqueue_style( 'prism-css', TENTP_URL . 'prism/prism.css', array(), false, 'all' );
+//    wp_enqueue_script( 'run-prism', TENTP_URL . 'prism/run-prism.js', array(), false, true );
+//}
+//add_action( 'wp_enqueue_scripts', 'tmce_add_prism_scripts' );
 /* End Prism hook */
 
 /* Add link to plugin desc that points to settings */
