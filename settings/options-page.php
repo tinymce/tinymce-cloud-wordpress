@@ -10,23 +10,11 @@ function tinymce_enterprise_settings_page() {
     <?php
     settings_fields('tinymce-enterprise-settings-group');
     $tinymce_enterprise_options = get_option('tinymce_enterprise_options');
-    $rootDirForEntPlugins = plugin_dir_path(__DIR__) . 'plugins/';
-    $validPlugins = getValidPlugins();
 
-    $pp_name = 'powerpaste';
-    $ppFolderExists = file_exists($rootDirForEntPlugins . $pp_name);
-    $noPluginFolderPresent = !($ppFolderExists);
-
-    if ($noPluginFolderPresent) {
-        require "plugin-settings/no-plugins-found.php";
-    } else {
-        if (isPluginValidForWPVersion($pp_name, $validPlugins, $rootDirForEntPlugins)) {
-            require "plugin-settings/powerpaste.php";
-        }
-    }
+    require "plugin-settings/powerpaste.php";
     ?>
     <p class="submit">
-        <input type="submit" class="button-primary" value="Save Changes" <?php if ($noPluginFolderPresent) echo 'disabled'; ?>/>
+        <input type="submit" class="button-primary" value="Save Changes"/>
     </p>
 </form>
 <?php

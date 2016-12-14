@@ -1,27 +1,38 @@
 <?php
 /* Add the TinyMCE Enterprise PowerPaste Plugin */
-add_filter('mce_external_plugins', 'add_powerpaste_plugin', 1000);
 add_filter('tiny_mce_before_init', 'disable_paste_plugin', 1001);
 add_filter('tiny_mce_before_init', 'add_powerpaste_options', 1002);
+//add_filter('mce_buttons', 'add_a11y_button', 1003);
 
-function add_powerpaste_plugin ($mce_plugins) {
-    $plugins = array('powerpaste'); //Add any more plugins you want to load here
-
-    //Build the response - the key is the plugin name, value is the URL to the plugin JS
-    foreach ($plugins as $plugin ) {
-        $mce_plugins[ $plugin ] = plugins_url( 'plugins/' . $plugin . '/plugin.js', dirname(__FILE__));
-    }
-    return $mce_plugins;
-}
+//Inject the TinyMCE Cloud script one time
+add_action( 'wp_tiny_mce_init', function () {
+    $tinymce_enterprise_settings = get_option('tinymce_enterprise_options');
+    $urlForCloud = "http://cloud.tinymce.com/4/plugins.min.js?apiKey=" . $tinymce_enterprise_settings['api_key'] . "\"";
+    ?>
+        <script src="<?php echo $urlForCloud ?>"></script>
+    <?php
+} );
 
 //Need to remove standard paste plugin as you don't want both running...
 function disable_paste_plugin($opt) {
-    //set button that will be show in row 1
-    $noPaste = str_replace("paste", "", $opt['plugins']);
+    //Set button that will be show in row 1
+    $noPaste = $opt['plugins'];
+    //If the paste plugin is loading remove it
+    $noPaste = str_replace("paste", "", $noPaste);
     $noPaste = str_replace(",,", ",", $noPaste);
+
+    //Add powerpaste to the plugin list
+    $noPaste = "powerpaste," . $noPaste;
+
+    //Update array with the new string list of plugins
     $opt['plugins'] = $noPaste;
     return $opt;
 }
+
+//function add_a11y_button ($buttons) {
+//    array_push($buttons, 'a11ycheck');
+//    return $buttons;
+//}
 
 function add_powerpaste_options($opt) {
     $tinymce_enterprise_settings = get_option('tinymce_enterprise_options');

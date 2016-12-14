@@ -13,6 +13,12 @@
             </td>
         </tr>
         <tr>
+            <th scope="row">TinyMCE Cloud API Key:</th>
+            <td colspan="3">
+                <?php insert_text_field('api_key', true, $tinymce_enterprise_options['api_key']); ?>
+            </td>
+        </tr>
+        <tr>
             <th scope="row">Word Import:</th>
             <td>
                 <?php

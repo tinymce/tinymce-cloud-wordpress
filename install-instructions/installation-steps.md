@@ -1,26 +1,32 @@
-# Installing TinyMCE PowerPaste
+# Installing TinyMCE (Cloud) PowerPaste
 
-The TinyMCE PowerPaste plugin is provided as a ZIP file named `powerpaste-wordpress.zip`.
-You install this plugin (`powerpaste-wordpress.zip`) as you would install any other WordPress
+The TinyMCE (Cloud) PowerPaste plugin is provided as a ZIP file named `powerpaste4wordpresscloud_latest.zip`.
+You install this plugin (`powerpaste4wordpresscloud_latest.zip`) as you would install any other WordPress
 plugin.  Guidance for installing WordPress plugins may be found on https://wordpress.org/.
 
-### A Note on File Permissions
-In some operating systems you may find that the file permissions on the TinyMCE PowerPaste plugin
-folder (and/or files) won't allow WordPress to read the files.  This will manifest itself as the plugin not showing
-in the admin screen.  If you see this issue make sure that "Everyone" can read the`powerpaste-wordpress` folder and
-all of its child files/folders.
-
-## Enabling the TinyMCE PowerPaste plugin
-By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste plugin.
-You can modify the default settings of the plugin by visiting the TinyMCE PowerPaste plugin
+## Enabling the TinyMCE (Cloud) PowerPaste plugin
+By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste (Cloud) plugin.
+You can modify the default settings of the plugin by visiting the TinyMCE (Cloud) PowerPaste plugin
 settings page in the WordPress Admin page.
 
 In the Settings area of the Admin page (`http://<your_wordpress_instance>/wp-admin/options-general.php`)
-you should now see a link for TinyMCE PowerPaste.  Clicking this will take you to the settings for
-TinyMCE PowerPaste.
+you should now see a link for TinyMCE (Cloud) PowerPaste.  Clicking this will take you to the settings for
+TinyMCE (Cloud) PowerPaste.
 
+## Obtaining Support
+If you have issues with the installation or use of this plugin please visit our support site at: http://support.ephox.com
 
-## Confirm permissions on `wp-content/uploads` folder
+Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  https://support.ephox.com/registration
+
+## Troubleshooting your installation
+
+### A Note on File Permissions
+In some operating systems you may find that the file permissions on the TinyMCE (Cloud) PowerPaste plugin
+folder (and/or files) won't allow WordPress to read the files.  This will manifest itself as the plugin not showing
+in the admin screen.  If you see this issue make sure that "Everyone" can read the`powerpaste-wordpress-cloud` folder and
+all of its child files/folders.
+
+### Confirm permissions on `wp-content/uploads` folder
 
 ***The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the `wp-content`
 folder for this plugin to function properly.***
@@ -52,8 +58,3 @@ You can resolve this error by doing one or both of the following:
 * Modify the settings for the `wp-content` folder (and its child folders) so that the user that runs the `imageHandler.php` script has write access to this folder. 
 
 ***If you need assistance with fixing file permissions please open a support case at: http://support.ephox.com***
-
-## Obtaining Support
-If you have issues with the installation or use of this plugin please visit our support site at: http://support.ephox.com
-
-Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  https://support.ephox.com/registration

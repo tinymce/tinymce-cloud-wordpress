@@ -1,13 +1,16 @@
-# TinyMCE PowerPaste for WordPress
+# TinyMCE PowerPaste (via Cloud) for WordPress
 
 #### NOTE: For installation details please read installation-steps.md
 
-This plugin allows you to run the TinyMCE PowerPaste plugin within
-WordPress (4.5+).  This plugin has been tested against the following WordPress versions:
+This plugin allows you to run the TinyMCE PowerPaste plugin (from the TinyMCE Cloud offering) within WordPress (4.5+).
+  
+The plugin assumes you have a TinyMCE Cloud API Key and will provide that upon installing the plugin.  No TinyMCE plugins are included as a part of this package.
+
+This plugin has been tested against the following WordPress versions:
 
 
-* **WordPress 4.5.x / TinyMCE 4.3.x**
-* **WordPress 4.6.x / TinyMCE 4.4.x**
+* **WordPress 4.5.x** *(with TinyMCE 4.3.x)*
+* **WordPress 4.6.x** *(wth TinyMCE 4.4.x)*
   
 
 **Note:** *There is a Gulp task designed to create the ZIP that someone would
