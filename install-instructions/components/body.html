@@ -1,20 +1,24 @@
-<h1 id="installing-tinymce-powerpaste">Installing TinyMCE PowerPaste</h1>
-<p>The TinyMCE PowerPaste plugin is provided as a ZIP file named <code>powerpaste-wordpress.zip</code>.
-You install this plugin (<code>powerpaste-wordpress.zip</code>) as you would install any other WordPress
+<h1 id="installing-tinymce-cloud-powerpaste">Installing TinyMCE (Cloud) PowerPaste</h1>
+<p>The TinyMCE (Cloud) PowerPaste plugin is provided as a ZIP file named <code>powerpaste4wordpresscloud_latest.zip</code>.
+You install this plugin (<code>powerpaste4wordpresscloud_latest.zip</code>) as you would install any other WordPress
 plugin.  Guidance for installing WordPress plugins may be found on <a href="https://wordpress.org/">https://wordpress.org/</a>.</p>
-<h3 id="a-note-on-file-permissions">A Note on File Permissions</h3>
-<p>In some operating systems you may find that the file permissions on the TinyMCE PowerPaste plugin
-folder (and/or files) won&#39;t allow WordPress to read the files.  This will manifest itself as the plugin not showing
-in the admin screen.  If you see this issue make sure that &quot;Everyone&quot; can read the<code>powerpaste-wordpress</code> folder and
-all of its child files/folders.</p>
-<h2 id="enabling-the-tinymce-powerpaste-plugin">Enabling the TinyMCE PowerPaste plugin</h2>
-<p>By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste plugin.
-You can modify the default settings of the plugin by visiting the TinyMCE PowerPaste plugin
+<h2 id="enabling-the-tinymce-cloud-powerpaste-plugin">Enabling the TinyMCE (Cloud) PowerPaste plugin</h2>
+<p>By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste (Cloud) plugin.
+You can modify the default settings of the plugin by visiting the TinyMCE (Cloud) PowerPaste plugin
 settings page in the WordPress Admin page.</p>
 <p>In the Settings area of the Admin page (<code>http://&lt;your_wordpress_instance&gt;/wp-admin/options-general.php</code>)
-you should now see a link for TinyMCE PowerPaste.  Clicking this will take you to the settings for
-TinyMCE PowerPaste.</p>
-<h2 id="confirm-permissions-on-wp-content-uploads-folder">Confirm permissions on <code>wp-content/uploads</code> folder</h2>
+you should now see a link for TinyMCE (Cloud) PowerPaste.  Clicking this will take you to the settings for
+TinyMCE (Cloud) PowerPaste.</p>
+<h2 id="obtaining-support">Obtaining Support</h2>
+<p>If you have issues with the installation or use of this plugin please visit our support site at: <a href="http://support.ephox.com">http://support.ephox.com</a></p>
+<p>Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  <a href="https://support.ephox.com/registration">https://support.ephox.com/registration</a></p>
+<h2 id="troubleshooting-your-installation">Troubleshooting Your Installation</h2>
+<h3 id="a-note-on-file-permissions">A Note on File Permissions</h3>
+<p>In some operating systems you may find that the file permissions on the TinyMCE (Cloud) PowerPaste plugin
+folder (and/or files) won&#39;t allow WordPress to read the files.  This will manifest itself as the plugin not showing
+in the admin screen.  If you see this issue make sure that &quot;Everyone&quot; can read the<code>powerpaste-wordpress-cloud</code> folder and
+all of its child files/folders.</p>
+<h3 id="confirm-permissions-on-wp-content-uploads-folder">Confirm permissions on <code>wp-content/uploads</code> folder</h3>
 <p><strong><em>The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the <code>wp-content</code>
 folder for this plugin to function properly.</em></strong></p>
 <p>If you use PowerPaste to paste images into TinyMCE (enabled by default) you need to make sure that this plugin
@@ -23,8 +27,8 @@ PowerPaste to upload and store images that are pasted into TinyMCE from MS Word 
 are used by the WordPress Media Library code to allow it to upload and store images.</p>
 <p>When pasting MS Word content if the content contains an image, that image should result in an <code>&lt;img&gt;</code> tag with
 a URL pointing to a file within the <code>wp-content/uploads</code> folder.  For example:</p>
-<p><code>&lt;img src=&quot;http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png&quot; width=&quot;212&quot; height=&quot;53&quot; /&gt;</code></p>
-<p>If you instead see a <code>Base64</code> or <code>Blob</code> encoded image in the HTML source look in your PHP error log.  If the PHP error log
+<pre><code>&lt;img src=&quot;http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png&quot; width=&quot;212&quot; height=&quot;53&quot; /&gt;
+</code></pre><p>If you instead see a <code>Base64</code> or <code>Blob</code> encoded image in the HTML source look in your PHP error log.  If the PHP error log
 states something like this:</p>
 <pre><code>PHP Warning:  move_uploaded_file(): Unable to move &#39;/private/var/tmp/phpf6d4n9&#39;
 to &#39;&lt;path_to_wordpress_install&gt;/wordpress/wp-content/uploads/2016/06/blobid0-1465592547-775.png&#39;
@@ -36,6 +40,3 @@ in &lt;path_to_wordpress_install&gt;/wordpress/wp-content/plugins/tinymce-enterp
 <li>Modify the settings for the <code>wp-content</code> folder (and its child folders) so that the user that runs the <code>imageHandler.php</code> script has write access to this folder. </li>
 </ul>
 <p><strong><em>If you need assistance with fixing file permissions please open a support case at: <a href="http://support.ephox.com">http://support.ephox.com</a></em></strong></p>
-<h2 id="obtaining-support">Obtaining Support</h2>
-<p>If you have issues with the installation or use of this plugin please visit our support site at: <a href="http://support.ephox.com">http://support.ephox.com</a></p>
-<p>Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  <a href="https://support.ephox.com/registration">https://support.ephox.com/registration</a></p>

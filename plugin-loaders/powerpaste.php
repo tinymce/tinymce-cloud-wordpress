@@ -62,9 +62,9 @@ function add_powerpaste_options($opt) {
         $opt['powerpaste_allow_local_images'] = true;
     }
 
-    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?postid=' . urlencode($post_id);
+    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress-cloud/imageHandler.php?postid=' . urlencode($post_id);
 
-//    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress/imageHandler.php?path='
+//    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress-cloud/imageHandler.php?path='
 //        . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);
 
     // By default WordPress strips all inline styles (TinyMCE plugin - 'wordpress') from

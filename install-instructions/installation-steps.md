@@ -18,7 +18,7 @@ If you have issues with the installation or use of this plugin please visit our 
 
 Please note that this site requires you to register prior to opening tickets so if you are a new Ephox customer start by signing up here:  https://support.ephox.com/registration
 
-## Troubleshooting your installation
+## Troubleshooting Your Installation
 
 ### A Note on File Permissions
 In some operating systems you may find that the file permissions on the TinyMCE (Cloud) PowerPaste plugin
@@ -39,7 +39,9 @@ are used by the WordPress Media Library code to allow it to upload and store ima
 When pasting MS Word content if the content contains an image, that image should result in an `<img>` tag with
 a URL pointing to a file within the `wp-content/uploads` folder.  For example:
 
-`<img src="http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png" width="212" height="53" />`
+```
+<img src="http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png" width="212" height="53" />
+```
 
 If you instead see a `Base64` or `Blob` encoded image in the HTML source look in your PHP error log.  If the PHP error log
 states something like this:
