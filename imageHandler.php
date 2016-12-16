@@ -6,7 +6,6 @@ require_once '../../../wp-includes/capabilities.php';
 
 function createFileName($fileNameParts) {
     $timeInMilliseconds = str_replace('.', '-', microtime(true));
-//            $finalFileName = $fileNameParts[0] . '-' . $timeInMilliseconds . '.' . $fileNameParts[1];
     return 'pp-' . $timeInMilliseconds . '.' . strtolower($fileNameParts[1]);
 }
 
@@ -35,6 +34,7 @@ if (current_user_can('edit_post', $_GET['postid'])) {
                 error_log('DUPLICATE FILE NAME!!!...trying again!');
                 $finalFileName = createFileName($fileNameParts);
                 $fileToWrite = $postedImageFolder . $finalFileName;
+                $attempts++;
             };
 
             //TODO: Add logic if the while fails due to attempts...
