@@ -1,6 +1,6 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
-<!--    <h2 class="title">TinyMCE PowerPaste Settings</h2>-->
+    <h2 class="title">TinyMCE PowerPaste Settings</h2>
     <p>For more details on these settings and how they impact PowerPaste please see the
         <strong><a href="https://www.tinymce.com/docs/enterprise/paste-from-word/" target="_blank">product documentation</a></strong>
     </p>
@@ -9,20 +9,14 @@
         <tr>
             <th scope="row">Enable PowerPaste:</th>
             <td colspan="3">
-                <?php insert_checkbox('enable_powerpaste', $tinymce_enterprise_options['enable_powerpaste']); ?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">TinyMCE Cloud API Key:</th>
-            <td colspan="3">
-                <?php insert_text_field('api_key', true, $tinymce_enterprise_options['api_key']); ?>
+                <?php insert_checkbox('enable_powerpaste', array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off'); ?>
             </td>
         </tr>
         <tr>
             <th scope="row">Word Import:</th>
             <td>
                 <?php
-                $isEnabled = $tinymce_enterprise_options['enable_powerpaste'] == 'on';
+                $isEnabled = array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off';
                 $currentValue = $tinymce_enterprise_options['powerpaste_word_import'];
                 $values = array("prompt", "clean","merge");
                 insert_select_list('powerpaste_word_import', $isEnabled, $currentValue, $values);
@@ -35,7 +29,7 @@
             <th scope="row">HTML Import:</th>
             <td>
                 <?php
-                $isEnabled = $tinymce_enterprise_options['enable_powerpaste'] == 'on';
+                $isEnabled = array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off';
                 $currentValue = $tinymce_enterprise_options['powerpaste_html_import'];
                 $values = array("prompt", "clean","merge");
                 insert_select_list('powerpaste_html_import', $isEnabled, $currentValue, $values);
@@ -50,7 +44,7 @@
             <th scope="row">Allow Local Images:</th>
             <td>
                 <?php
-                $isEnabled = $tinymce_enterprise_options['enable_powerpaste'] == 'on';
+                $isEnabled = array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off';
                 $currentValue = $tinymce_enterprise_options['powerpaste_allow_local_images'];
                 $values = array("true", "false");
                 insert_select_list('powerpaste_allow_local_images', $isEnabled, $currentValue, $values);
@@ -63,7 +57,7 @@
             <th scope="row">Block Drop:</th>
             <td>
                 <?php
-                $isEnabled = $tinymce_enterprise_options['enable_powerpaste'] == 'on';
+                $isEnabled = array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off';
                 $currentValue = $tinymce_enterprise_options['powerpaste_block_drop'];
                 $values = array("true", "false");
                 insert_select_list('powerpaste_block_drop', $isEnabled, $currentValue, $values);

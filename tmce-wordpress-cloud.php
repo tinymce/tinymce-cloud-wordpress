@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: TinyMCE (Cloud) PowerPaste
-Plugin URI: https://www.ephox.com/tinymce/powerpaste-for-wordpress/
-Description: PowerPaste cleans content copied from Microsoft Word and the internet so that when you paste the content into WordPress it automatically matches the look and feel of your website. If your content contains images, PowerPaste will include the images and upload them to your Media Library. PowerPaste can also be configured to maintain the styling of your original content.
-Version: 1.0
+Plugin Name: TinyMCE Pro (Cloud)
+Plugin URI: https://www.ephox.com/tinymce/???
+Description: TinyMCE Pro provides additional functionality for the editor in WordPress.  For more details see:  http://www.ephox.com/tinymce/????
+Version: 1.1
 Author: Ephox
 Author URI: https://www.ephox.com/
-Text Domain: powerpaste_wordpress
+Text Domain: tinymce_pro_wordpress
 */
 
 if ( ! defined( 'TENTP_URL' ) ) define( 'TENTP_URL', plugin_dir_url( __FILE__ ) );
@@ -22,13 +22,18 @@ function tinymce_enterprise_activate () {
 //    }
     //create defaults for settings
     $tinymce_enterprise_options_array = array(
-        'version' => '1.0',
+        'version' => '1.1',
         'api_key' => '',
         'enable_powerpaste' => 'on',
         'powerpaste_word_import' => 'clean',
         'powerpaste_html_import' => 'merge',
         'powerpaste_block_drop' => false,
-        'powerpaste_allow_local_images' => true
+        'powerpaste_allow_local_images' => true,
+        'enable_a11y' => 'on',
+        'enable_advcode' => 'on',
+        'enable_linkchecker' => 'on',
+        'enable_mediaembed' => 'on',
+        'enable_spellcheck' => 'on'
     );
 
     //Don't overwrite existing options if plugin was installed previously???
@@ -52,7 +57,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE PowerPaste Settings Page', 'TinyMCE (Cloud) PowerPaste', 'manage_options', 'powerpaste_wordpress', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE Pro Settings Page', 'TinyMCE Pro (Cloud)', 'manage_options', 'tmce_pro', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 
@@ -65,7 +70,7 @@ function tinymce_enterprise_register_settings () {
 
 /* Add link to plugin desc that points to settings */
 function plugin_add_settings_link( $links ) {
-    $settings_link = '<a href="options-general.php?page=powerpaste_wordpress">' . __( 'Settings' ) . '</a>';
+    $settings_link = '<a href="options-general.php?page=tmce_pro">' . __( 'Settings' ) . '</a>';
     array_push( $links, $settings_link );
     return $links;
 }
@@ -75,8 +80,28 @@ add_filter( "plugin_action_links_" . $plugin, 'plugin_add_settings_link' );
 /* Which plugins do we actually load - only PowerPaste an option right now */
 require_once "general-helpers.php";
 $tinymce_enterprise_options = get_option('tinymce_enterprise_options');
+
+// Always need to load the script from the cloud server
+require "plugin-loaders/script-loader.php";
+
+// What plugins are enabled?
 if(shouldLoadPlugin('powerpaste', $tinymce_enterprise_options)){
     require "plugin-loaders/powerpaste.php";
+}
+if(shouldLoadPlugin('a11y', $tinymce_enterprise_options)){
+    require "plugin-loaders/a11y.php";
+}
+if(shouldLoadPlugin('advcode', $tinymce_enterprise_options)){
+    require "plugin-loaders/advcode.php";
+}
+if(shouldLoadPlugin('linkchecker', $tinymce_enterprise_options)){
+    require "plugin-loaders/linkchecker.php";
+}
+if(shouldLoadPlugin('mediaembed', $tinymce_enterprise_options)){
+    require "plugin-loaders/media-embed.php";
+}
+if(shouldLoadPlugin('spellcheck', $tinymce_enterprise_options)){
+    require "plugin-loaders/spelling.php";
 }
 
 ?>

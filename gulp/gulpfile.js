@@ -21,12 +21,17 @@ gulp.task('default', function() {
 });
 
 gulp.task('WordPress 4.5.2 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress452/wp-content/plugins/powerpaste-wordpress-cloud';
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress452/wp-content/plugins/tmce-wordpress-cloud';
     moveFiles(wpPluginsFolder);
 });
 
 gulp.task('WordPress 4.6.1 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress461/wp-content/plugins/powerpaste-wordpress-cloud';
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress461/wp-content/plugins/tmce-wordpress-cloud';
+    moveFiles(wpPluginsFolder);
+});
+
+gulp.task('WordPress 4.7.3 - Deploy Local', function () {
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress473/wp-content/plugins/tmce-wordpress-cloud';
     moveFiles(wpPluginsFolder);
 });
 
@@ -38,7 +43,7 @@ function moveFiles(wpPluginsFolder) {
 gulp.task('Create ZIP for Distribution', ['Move Files for Zip', 'Create Install Readme', 'Zip Files']);
 
 gulp.task('Move Files for Zip', ['Clean dist-code-files'] ,function () {
-    var distributionCodeFilesFolder = '../dist/powerpaste-wordpress-cloud';
+    var distributionCodeFilesFolder = '../dist/tmce-wordpress-cloud';
     return gulp.src(includedFiles.concat(excludedFiles))
         .pipe(chmod(755))
         .pipe(gulp.dest(distributionCodeFilesFolder));
@@ -53,7 +58,7 @@ gulp.task('Generate HTML Body', function () {
 // gulp.task('Create Install Readme', function () {
 gulp.task('Create Install Readme', ['Generate HTML Body'], function () {
         console.log('Create Install Readme');
-        var distributionCodeFilesFolder = '../dist/powerpaste-wordpress-cloud';
+        var distributionCodeFilesFolder = '../dist/tmce-wordpress-cloud';
 
         gulp.src('../install-instructions/components/**/*.html')
             .pipe(order([
@@ -73,10 +78,10 @@ gulp.task('Create Install Readme', ['Generate HTML Body'], function () {
 
 
 gulp.task('Zip Files', ['Move Files for Zip', 'Create Install Readme'],  function () {
-    return exec('cd ../dist && zip -r ./zip/powerpaste4wordpresscloud_latest.zip ./powerpaste-wordpress-cloud/*');
+    return exec('cd ../dist && zip -r ./zip/tmcewordpresscloud_latest.zip ./tmce-wordpress-cloud/*');
 });
 
 gulp.task('Clean dist-code-files', function () {
     // Delete Temp Files & Folders needed to make the distribution ZIP
-    return del(['../dist/powerpaste-wordpress-cloud/**', '../dist/zip/**', '!../dist/powerpaste-wordpress-cloud', '!../dist/zip'], {force: true});
+    return del(['../dist/tmce-wordpress-cloud/**', '../dist/zip/**', '!../dist/tmce-wordpress-cloud', '!../dist/zip'], {force: true});
 });
