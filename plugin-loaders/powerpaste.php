@@ -26,28 +26,30 @@ function add_powerpaste_options($opt) {
 //    $upload_url = $uploads['url'];
     global $post;
     $post_id = $post->ID;
-    if($tinymce_enterprise_settings['powerpaste_word_import']) {
+
+    //array_key_exists('enable_powerpaste', $tinymce_enterprise_settings)
+    if(array_key_exists('powerpaste_word_import', $tinymce_enterprise_settings)) {
         $opt['powerpaste_word_import'] = $tinymce_enterprise_settings['powerpaste_word_import'];
     } else {
         $opt['powerpaste_word_import'] = 'clean';
     }
-    if($tinymce_enterprise_settings['powerpaste_html_import']) {
+    if(array_key_exists('powerpaste_html_import', $tinymce_enterprise_settings)) {
         $opt['powerpaste_html_import'] = $tinymce_enterprise_settings['powerpaste_html_import'];
     } else {
         $opt['powerpaste_html_import'] = 'merge';
     }
-    if($tinymce_enterprise_settings['powerpaste_block_drop']) {
+    if(array_key_exists('powerpaste_block_drop', $tinymce_enterprise_settings)) {
         $opt['powerpaste_block_drop'] = $tinymce_enterprise_settings['powerpaste_block_drop'];
     } else {
         $opt['powerpaste_block_drop'] = false;
     }
-    if($tinymce_enterprise_settings['powerpaste_allow_local_images']) {
+    if(array_key_exists('powerpaste_allow_local_images', $tinymce_enterprise_settings)) {
         $opt['powerpaste_allow_local_images'] = $tinymce_enterprise_settings['powerpaste_allow_local_images'];
     } else {
         $opt['powerpaste_allow_local_images'] = true;
     }
 
-    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress-cloud/imageHandler.php?postid=' . urlencode($post_id);
+    $opt['images_upload_url'] = plugins_url() . '/tmce-wordpress-cloud/imageHandler.php?postid=' . urlencode($post_id);
 
 //    $opt['images_upload_url'] = plugins_url() . '/powerpaste-wordpress-cloud/imageHandler.php?path='
 //        . urlencode($upload_path) . '&url=' . urlencode($upload_url) . '&postid=' . urlencode($post_id);

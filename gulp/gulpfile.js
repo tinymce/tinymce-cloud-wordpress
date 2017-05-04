@@ -20,18 +20,13 @@ gulp.task('default', function() {
     return gutil.log('Gulp is running!');
 });
 
-gulp.task('WordPress 4.5.2 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress452/wp-content/plugins/tmce-wordpress-cloud';
+gulp.task('WordPress 4.6 - Deploy Local', function () {
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress46/wp-content/plugins/tmce-wordpress-cloud';
     moveFiles(wpPluginsFolder);
 });
 
-gulp.task('WordPress 4.6.1 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress461/wp-content/plugins/tmce-wordpress-cloud';
-    moveFiles(wpPluginsFolder);
-});
-
-gulp.task('WordPress 4.7.3 - Deploy Local', function () {
-    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress473/wp-content/plugins/tmce-wordpress-cloud';
+gulp.task('WordPress 4.7 - Deploy Local', function () {
+    var wpPluginsFolder = '/Users/mfromin/Sites/wordpress47/wp-content/plugins/tmce-wordpress-cloud';
     moveFiles(wpPluginsFolder);
 });
 

@@ -5,15 +5,18 @@
         <strong><a href="https://www.tinymce.com/docs/plugins/mediaembed/" target="_blank">product documentation</a></strong>
     </p>
     <!-- Requires TinyMCE 4.5.2 -->
-    <p><em>Note: This plugin requires WordPress ?.? or greater</em></p>
-    <table class="form-table">
-        <tbody>
-        <tr>
-            <th scope="row">Enable Link Checker:</th>
-            <td colspan="3">
-                <?php insert_checkbox('enable_mediaembed', array_key_exists('enable_mediaembed', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_mediaembed'] : 'off'); ?>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <?php if(is474OrNewer()) : ?>
+        <table class="form-table">
+            <tbody>
+            <tr>
+                <th scope="row">Enable Enhanced Media Embed:</th>
+                <td colspan="3">
+                    <?php insert_checkbox('enable_mediaembed', array_key_exists('enable_mediaembed', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_mediaembed'] : 'off'); ?>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    <?php else : ?>
+        <p><em>Feature Unavailable: This feature requires WordPress 4.7.4 or greater</em></p>
+    <?php endif; ?>
 </div>

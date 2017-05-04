@@ -9,4 +9,13 @@ function shouldLoadPlugin($name, $tinymce_enterprise_options) {
 
     return $isEnabled;
 }
+
+function is474OrNewer() {
+    $wpVersion = get_bloginfo('version');
+    if (version_compare($wpVersion, '4.7.4') >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>

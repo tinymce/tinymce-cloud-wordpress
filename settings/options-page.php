@@ -15,7 +15,7 @@ function tinymce_enterprise_settings_page() {
     require "plugin-settings/powerpaste.php";
     require "plugin-settings/a11y.php";
     require "plugin-settings/advcode.php";
-    require "plugin-settings/linkchecker.php";
+//    require "plugin-settings/linkchecker.php";
     require "plugin-settings/media-embed.php";
     require "plugin-settings/spelling.php";
     ?>

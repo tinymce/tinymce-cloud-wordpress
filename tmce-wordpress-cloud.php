@@ -81,10 +81,10 @@ add_filter( "plugin_action_links_" . $plugin, 'plugin_add_settings_link' );
 require_once "general-helpers.php";
 $tinymce_enterprise_options = get_option('tinymce_enterprise_options');
 
-// Always need to load the script from the cloud server
+// Always need to load the actual JavaScript code from the cloud server
 require "plugin-loaders/script-loader.php";
 
-// What plugins are enabled?
+// What plugins are enabled and available based on WP version?
 if(shouldLoadPlugin('powerpaste', $tinymce_enterprise_options)){
     require "plugin-loaders/powerpaste.php";
 }
@@ -94,13 +94,14 @@ if(shouldLoadPlugin('a11y', $tinymce_enterprise_options)){
 if(shouldLoadPlugin('advcode', $tinymce_enterprise_options)){
     require "plugin-loaders/advcode.php";
 }
-if(shouldLoadPlugin('linkchecker', $tinymce_enterprise_options)){
-    require "plugin-loaders/linkchecker.php";
-}
-if(shouldLoadPlugin('mediaembed', $tinymce_enterprise_options)){
+//if(shouldLoadPlugin('linkchecker', $tinymce_enterprise_options)){
+//    require "plugin-loaders/linkchecker.php";
+//}
+
+if(shouldLoadPlugin('mediaembed', $tinymce_enterprise_options) && (is474OrNewer())){
     require "plugin-loaders/media-embed.php";
 }
-if(shouldLoadPlugin('spellcheck', $tinymce_enterprise_options)){
+if(shouldLoadPlugin('spellcheck', $tinymce_enterprise_options) && (is474OrNewer())){
     require "plugin-loaders/spelling.php";
 }
 
