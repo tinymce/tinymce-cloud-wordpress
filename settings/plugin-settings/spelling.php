@@ -17,6 +17,6 @@
             </tbody>
         </table>
     <?php else : ?>
-        <p><em>Feature Unavailable: This feature requires WordPress 4.7.4 or greater</em></p>
+        <p><em>Feature Unavailable: This feature requires <a href="https://wordpress.org/download/" target="_blank">WordPress 4.7.4 or greater</a></em></p>
     <?php endif; ?>
 </div>

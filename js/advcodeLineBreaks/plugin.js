@@ -1,7 +1,10 @@
 /**
- * This file is adapted from the TinyMCE Advanced WordPress plugin and is released under the same license.
- *
- * Original work for addLineBreaks is Copyright (c) 2007-2016 Andrew Ozz. All rights reserved.
+  Copyright 2012-2017 Andrew Ozz
+  Copyright 2017 Michael Fromin <michael.fromin@ephox.com>
+
+  The following code is a derivative work of the code from the TinyMCE Advanced project,
+  which is licensed GPLv2. This code therefore is also licensed under the terms
+  of the GNU Public License, version 2.
  */
 ( function( tinymce ) {
 	tinymce.PluginManager.add( 'advcodeLineBreaks', function( editor ) {
