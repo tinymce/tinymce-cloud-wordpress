@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: TinyMCE Pro (Cloud)
+Plugin Name: TinyMCE Pro Cloud
 Plugin URI: https://www.ephox.com/tinymce/???
 Description: TinyMCE Pro provides additional functionality for the editor in WordPress.  For more details see:  http://www.ephox.com/tinymce/????
 Version: 1.1
@@ -24,16 +24,16 @@ function tinymce_enterprise_activate () {
     $tinymce_enterprise_options_array = array(
         'version' => '1.1',
         'api_key' => '',
-        'enable_powerpaste' => 'on',
+        'enable_powerpaste' => 'off',
         'powerpaste_word_import' => 'clean',
         'powerpaste_html_import' => 'merge',
         'powerpaste_block_drop' => false,
         'powerpaste_allow_local_images' => true,
-        'enable_a11y' => 'on',
-        'enable_advcode' => 'on',
-        'enable_linkchecker' => 'on',
-        'enable_mediaembed' => 'on',
-        'enable_spellcheck' => 'on'
+        'enable_a11y' => 'off',
+        'enable_advcode' => 'off',
+        'enable_linkchecker' => 'off',
+        'enable_mediaembed' => 'off',
+        'enable_spellcheck' => 'off'
     );
 
     //Don't overwrite existing options if plugin was installed previously???
@@ -57,7 +57,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE Pro Settings Page', 'TinyMCE Pro (Cloud)', 'manage_options', 'tmce_pro', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE Cloud Pro Settings', 'TinyMCE Cloud Pro', 'manage_options', 'tmce_pro', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 

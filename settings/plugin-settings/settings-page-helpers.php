@@ -35,7 +35,7 @@ function insert_select_list($settings_name, $isEnabled, $currentValue, $values) 
 <?php
 function insert_text_field($settings_name, $isEnabled, $currentValue) {
     ?>
-    <input type="text" name="tinymce_enterprise_options[<?php echo $settings_name ?>]" size="75"
+    <input type="text" name="tinymce_enterprise_options[<?php echo $settings_name ?>]" size="70"
            value="<?php echo $currentValue; ?>"
         <?php if(!$isEnabled){ ?>
             readonly
