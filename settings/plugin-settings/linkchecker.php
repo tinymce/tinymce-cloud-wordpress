@@ -9,7 +9,7 @@
     <table class="form-table">
         <tbody>
         <tr>
-            <th scope="row">Enable:</th>
+            <th style="width:40px;" scope="row">Enable:</th>
             <td colspan="3">
                 <?php insert_checkbox('enable_linkchecker', array_key_exists('enable_linkchecker', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_linkchecker'] : 'off'); ?>
             </td>

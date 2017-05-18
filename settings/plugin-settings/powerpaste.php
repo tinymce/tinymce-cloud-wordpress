@@ -7,11 +7,15 @@
     <table class="form-table">
         <tbody>
         <tr>
-            <th scope="row">Enable:</th>
+            <th style="width:40px;" scope="row">Enable:</th>
             <td colspan="3">
                 <?php insert_checkbox('enable_powerpaste', array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off'); ?>
             </td>
         </tr>
+        </tbody>
+    </table>
+    <table class="form-table">
+        <tbody>
         <tr>
             <th scope="row">Word Import:</th>
             <td>
