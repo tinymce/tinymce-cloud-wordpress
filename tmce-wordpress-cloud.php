@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: TinyMCE Pro Cloud
+Plugin Name: TinyMCE Cloud Pro
 Plugin URI: https://www.ephox.com/tinymce/???
-Description: TinyMCE Pro provides additional functionality for the editor in WordPress.  For more details see:  http://www.ephox.com/tinymce/????
+Description: TinyMCE Cloud Pro provides premium functionality for the editor in WordPress.  For more details see:  http://www.ephox.com/tinymce/????
 Version: 1.1
 Author: Ephox
 Author URI: https://www.ephox.com/

@@ -4,7 +4,7 @@
     <table class="form-table">
         <tbody>
         <tr>
-            <th colspan="2" scope="row">Enter your TinyMCE Cloud API Key:</th>
+            <th style="width:100px;" colspan="2" scope="row">Enter your TinyMCE Cloud API Key:</th>
             <td colspan="2">
                 <?php insert_text_field('api_key', true, $tinymce_enterprise_options['api_key']); ?>
             </td>
