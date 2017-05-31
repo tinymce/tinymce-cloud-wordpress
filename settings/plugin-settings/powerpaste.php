@@ -34,7 +34,7 @@
                 ?>
                 &nbsp;&nbsp;
                 <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_word_import" target="_blank">
-                    <img style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info22.png' ?>">
+                    <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
             <th scope="row">HTML Import:</th>
@@ -47,7 +47,7 @@
                 ?>
                 &nbsp;&nbsp;
                 <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_html_import" target="_blank">
-                    <img style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info22.png' ?>">
+                    <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
         </tr>
@@ -62,7 +62,7 @@
                 ?>
                 &nbsp;&nbsp;
                 <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_allow_local_images" target="_blank">
-                    <img style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info22.png' ?>">
+                    <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
             <th scope="row">Block Drop:</th>
@@ -75,7 +75,7 @@
                 ?>
                 &nbsp;&nbsp;
                 <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_block_drop" target="_blank">
-                    <img style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info22.png' ?>">
+                    <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
         </tr>
