@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: TinyMCE Cloud Pro
+Plugin Name: TinyMCE Cloud
 Plugin URI: https://www.ephox.com/tinymce/???
-Description: TinyMCE Cloud Pro provides premium functionality for the editor in WordPress.  For more details see:  http://www.ephox.com/tinymce/????
+Description: Turbocharge your content creation experience with premium tools enabling clean copy and paste, embedded media previews, as-you-type spell checking, accessibility best practices, and a more IDE-like code viewer.
 Version: 1.1
 Author: Ephox
 Author URI: https://www.ephox.com/
-Text Domain: tinymce_pro_wordpress
+Text Domain: tinymce_cloud_wordpress
 */
 
 if ( ! defined( 'TENTP_URL' ) ) define( 'TENTP_URL', plugin_dir_url( __FILE__ ) );
@@ -57,7 +57,7 @@ require "settings/options-page.php";
 
 add_action('admin_menu', 'tinymce_enterprise_settings_submenu');
 function tinymce_enterprise_settings_submenu () {
-    add_options_page('TinyMCE Cloud Pro Settings', 'TinyMCE Cloud Pro', 'manage_options', 'tmce_pro', 'tinymce_enterprise_settings_page');
+    add_options_page('TinyMCE Cloud Settings', 'TinyMCE Cloud', 'manage_options', 'tmce_cloud', 'tinymce_enterprise_settings_page');
     add_action('admin_init', 'tinymce_enterprise_register_settings');
 }
 
@@ -70,7 +70,7 @@ function tinymce_enterprise_register_settings () {
 
 /* Add link to plugin desc that points to settings */
 function plugin_add_settings_link( $links ) {
-    $settings_link = '<a href="options-general.php?page=tmce_pro">' . __( 'Settings' ) . '</a>';
+    $settings_link = '<a href="options-general.php?page=tmce_cloud">' . __( 'Settings' ) . '</a>';
     array_push( $links, $settings_link );
     return $links;
 }

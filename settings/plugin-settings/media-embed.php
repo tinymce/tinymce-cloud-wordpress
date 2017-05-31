@@ -1,8 +1,15 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
     <h2 class="title">TinyMCE Enhanced Media Embed</h2>
-    <p>For more details please see the
-        <strong><a href="https://www.tinymce.com/docs/plugins/mediaembed/" target="_blank">product documentation</a></strong>
+    <p>
+        Enhance the content experience in your website or app with enriched media previews
+        from the most popular web sources. Facebook, YouTube, Flickr, NY Times, Vimeo, Hulu,
+        Tumblr, CodePen, SlideShare, TechCrunch, WordPress, Twitch, Spotify … and many more!
+    </p>
+    <p>
+        <strong><a href="https://www.ephox.com/products/enhanced-media-embed/" target="_blank">Learn More</a></strong>
+         |
+        <strong><a href="https://www.tinymce.com/docs/plugins/mediaembed/" target="_blank">Documentation</a></strong>
     </p>
     <!-- Requires TinyMCE 4.5.2 -->
     <?php if(is474OrNewer()) : ?>

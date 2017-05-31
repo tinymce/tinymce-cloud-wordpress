@@ -1,8 +1,17 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
     <h2 class="title">TinyMCE Accessibility Checker</h2>
-    <p>For more details please see the
-        <strong><a href="https://www.tinymce.com/docs/plugins/a11ychecker/" target="_blank">product documentation</a></strong>
+    <p>
+        Engage with the hundreds of thousands of people worldwide using screen readers or other assistive technologies.
+        Maintaining your web compliance to WAI-ARIA standards ensures you fully extend your global reach and allows everyone
+        to consume your content.
+    </p>
+    <p>
+        <strong>
+            <a href="https://www.ephox.com/products/accessibility-checker/" target="_blank">Learn More</a>
+             |
+            <a href="https://www.tinymce.com/docs/plugins/a11ychecker/" target="_blank">Documentation</a>
+        </strong>
     </p>
     <table class="form-table">
         <tbody>

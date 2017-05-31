@@ -39,12 +39,22 @@ function add_powerpaste_options($opt) {
         $opt['powerpaste_html_import'] = 'merge';
     }
     if(array_key_exists('powerpaste_block_drop', $tinymce_enterprise_settings)) {
-        $opt['powerpaste_block_drop'] = $tinymce_enterprise_settings['powerpaste_block_drop'];
+        if($tinymce_enterprise_settings['powerpaste_block_drop'] == "true") {
+//            $opt['powerpaste_block_drop'] = $tinymce_enterprise_settings['powerpaste_block_drop'];
+            $opt['powerpaste_block_drop'] = true;
+        } else {
+            $opt['powerpaste_block_drop'] = false;
+        }
     } else {
         $opt['powerpaste_block_drop'] = false;
     }
     if(array_key_exists('powerpaste_allow_local_images', $tinymce_enterprise_settings)) {
-        $opt['powerpaste_allow_local_images'] = $tinymce_enterprise_settings['powerpaste_allow_local_images'];
+        if($tinymce_enterprise_settings['powerpaste_allow_local_images'] == "false") {
+//            $opt['powerpaste_allow_local_images'] = $tinymce_enterprise_settings['powerpaste_allow_local_images'];
+            $opt['powerpaste_allow_local_images'] = false;
+        } else {
+            $opt['powerpaste_allow_local_images'] = true;
+        }
     } else {
         $opt['powerpaste_allow_local_images'] = true;
     }

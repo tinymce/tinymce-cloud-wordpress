@@ -1,17 +1,17 @@
-# Installing TinyMCE (Cloud) PowerPaste
+# Installing TinyMCE Cloud
 
-The TinyMCE (Cloud) PowerPaste plugin is provided as a ZIP file named `powerpaste4wordpresscloud_latest.zip`.
-You install this plugin (`powerpaste4wordpresscloud_latest.zip`) as you would install any other WordPress
-plugin.  Guidance for installing WordPress plugins may be found on https://wordpress.org/.
+The TinyMCE Cloud plugin is provided as a ZIP file named `tmcewordpresscloud_latest.zip`.
+You install this plugin as you would install any other WordPress plugin.  Guidance for installing 
+WordPress plugins may be found on https://wordpress.org/.
 
-## Enabling the TinyMCE (Cloud) PowerPaste plugin
-By default PowerPaste is enabled when you install and activate the TinyMCE PowerPaste (Cloud) plugin.
-You can modify the default settings of the plugin by visiting the TinyMCE (Cloud) PowerPaste plugin
-settings page in the WordPress Admin page.
+## Enabling the TinyMCE Cloud plugin
+Before you can use this plugin you will need to access the setting page for the plugin to enter your
+TinyMCE Cloud API Key and enable those plugins that you have purchased.
 
-In the Settings area of the Admin page (`http://<your_wordpress_instance>/wp-admin/options-general.php`)
-you should now see a link for TinyMCE (Cloud) PowerPaste.  Clicking this will take you to the settings for
-TinyMCE (Cloud) PowerPaste.
+By default no plugins are enabled when you install and activate the TinyMCE Cloud plugin - you can modify the settings of the plugin by visiting the TinyMCE 
+Cloud plugin settings page in the WordPress Admin console.  The settings page for this plugin should be accessible at 
+`http://<your_wordpress_instance>/wp-admin/options-general.php?page=tmce_cloud`.
+
 
 ## Obtaining Support
 If you have issues with the installation or use of this plugin please visit our support site at: http://support.ephox.com
@@ -21,23 +21,20 @@ Please note that this site requires you to register prior to opening tickets so 
 ## Troubleshooting Your Installation
 
 ### A Note on File Permissions
-In some operating systems you may find that the file permissions on the TinyMCE (Cloud) PowerPaste plugin
-folder (and/or files) won't allow WordPress to read the files.  This will manifest itself as the plugin not showing
-in the admin screen.  If you see this issue make sure that "Everyone" can read the`powerpaste-wordpress-cloud` folder and
-all of its child files/folders.
+In some operating systems you may find that the file permissions on the TinyMCE Cloud plugin folder (and/or files) won't allow WordPress to read the files.  
+This will manifest itself as the plugin not showing in the admin console.  If you see this issue make sure that "Everyone" can read the`tmce-wordpress-cloud` 
+folder and all of its child files/folders.
 
 ### Confirm permissions on `wp-content/uploads` folder
 
-***The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the `wp-content`
-folder for this plugin to function properly.***
+***The user (on your server) that runs all of the PHP scripts in this plugin needs write access to the `wp-content` folder for this plugin to function properly.***
 
-If you use PowerPaste to paste images into TinyMCE (enabled by default) you need to make sure that this plugin
-can write files to the `wp-content/uploads` folder (and all of its child folders).  This is necessary to allow
-PowerPaste to upload and store images that are pasted into TinyMCE from MS Word and MS Excel.  The same permissions
-are used by the WordPress Media Library code to allow it to upload and store images.
+If you use PowerPaste to paste images into TinyMCE (enabled by default) you need to make sure that this plugin can write files to the `wp-content/uploads` folder 
+(and all of its child folders).  This is necessary to allow PowerPaste to upload and store images that are pasted into TinyMCE from MS Word and MS Excel.  
+The same permissions are used by the WordPress Media Library code to allow it to upload and store images.
 
-When pasting MS Word content if the content contains an image, that image should result in an `<img>` tag with
-a URL pointing to a file within the `wp-content/uploads` folder.  For example:
+When pasting MS Word content if the content contains an image, that image should result in an `<img>` tag with a URL pointing to a file within the `wp-content/uploads` 
+folder.  For example:
 
 ```
 <img src="http://localhost/~mfromin/wordpress452/wp-content/uploads/2016/06/blobid0-1465660986-8468.png" width="212" height="53" />
@@ -52,7 +49,8 @@ to '<path_to_wordpress_install>/wordpress/wp-content/uploads/2016/06/blobid0-146
 in <path_to_wordpress_install>/wordpress/wp-content/plugins/tinymce-enterprise/imageHandler.php
 ```
 
-...then you have a permissions issue.  This error implies that this plugin's image upload script (`imageHandler.php`) cannot write to the `uploads` folder or one of its child folders.
+...then you have a permissions issue.  This error implies that this plugin's image upload script (`imageHandler.php`) cannot write to the `uploads` folder or one 
+of its child folders.
 
 You can resolve this error by doing one or both of the following:
 

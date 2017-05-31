@@ -1,8 +1,15 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
     <h2 class="title">TinyMCE Spellchecker Pro</h2>
-    <p>For more details please see the
-        <strong><a href="https://www.tinymce.com/docs/plugins/tinymcespellchecker/" target="_blank">product documentation</a></strong>
+    <p>
+        Take advantage of spell checking as-you-type, with inline spell checking and a dialog mode that
+        steps you through each error, offering a list of suggested corrections.  And by deploying SpellCheckerPro
+        from our cloud service, you’ll never need to worry about server-side set-up or maintenance.
+    </p>
+    <p>
+        <strong><a href="https://www.ephox.com/products/spell-checker-pro/" target="_blank">Learn More</a></strong>
+         |
+        <strong><a href="https://www.tinymce.com/docs/plugins/tinymcespellchecker/" target="_blank">Documentation</a></strong>
     </p>
     <!-- Fix for compat3x in TinyMCE 4.5.3 on 1-Feb-2017 -->
     <?php if(is474OrNewer()) : ?>

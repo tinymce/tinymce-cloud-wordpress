@@ -1,8 +1,15 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
     <h2 class="title">TinyMCE PowerPaste</h2>
-    <p>For more details please see the
-        <strong><a href="https://www.tinymce.com/docs/enterprise/paste-from-word/" target="_blank">product documentation</a></strong>
+    <p>
+        Enjoy clean copy/paste of content from Word, Excel, and other popular content tools.  PowerPaste
+        seamlessly matches the pasted content to your site’s look and feel, freeing you from the need to
+        fix rogue formatting errors, and increasing your productivity.
+    </p>
+    <p>
+        <strong><a href="https://www.ephox.com/products/powerpaste/" target="_blank">Learn More</a></strong>
+         |
+        <strong><a href="https://www.tinymce.com/docs/enterprise/paste-from-word/" target="_blank">Documentation</a></strong>
     </p>
     <table class="form-table">
         <tbody>
