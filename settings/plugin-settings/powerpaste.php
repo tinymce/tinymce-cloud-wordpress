@@ -9,7 +9,7 @@
     <p>
         <strong><a href="https://www.ephox.com/products/powerpaste/" target="_blank">Learn More</a></strong>
          |
-        <strong><a href="https://www.tinymce.com/docs/enterprise/paste-from-word/" target="_blank">Documentation</a></strong>
+        <strong><a href=" https://www.tinymce.com/docs/plugins/powerpaste/" target="_blank">Documentation</a></strong>
     </p>
     <table class="form-table">
         <tbody>
@@ -33,7 +33,7 @@
                 insert_select_list('powerpaste_word_import', $isEnabled, $currentValue, $values);
                 ?>
                 &nbsp;&nbsp;
-                <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_word_import" target="_blank">
+                <a href="https://www.tinymce.com/docs/plugins/powerpaste/#powerpaste_word_import" target="_blank">
                     <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
@@ -46,7 +46,7 @@
                 insert_select_list('powerpaste_html_import', $isEnabled, $currentValue, $values);
                 ?>
                 &nbsp;&nbsp;
-                <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_html_import" target="_blank">
+                <a href="https://www.tinymce.com/docs/plugins/powerpaste/#powerpaste_html_import" target="_blank">
                     <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
@@ -61,7 +61,7 @@
                 insert_select_list('powerpaste_allow_local_images', $isEnabled, $currentValue, $values);
                 ?>
                 &nbsp;&nbsp;
-                <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_allow_local_images" target="_blank">
+                <a href="https://www.tinymce.com/docs/plugins/powerpaste/#powerpaste_allow_local_images" target="_blank">
                     <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
@@ -74,7 +74,7 @@
                 insert_select_list('powerpaste_block_drop', $isEnabled, $currentValue, $values);
                 ?>
                 &nbsp;&nbsp;
-                <a href="https://www.tinymce.com/docs/enterprise/paste-from-word/#powerpaste_block_drop" target="_blank">
+                <a href="https://www.tinymce.com/docs/plugins/powerpaste/#powerpaste_block_drop" target="_blank">
                     <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
