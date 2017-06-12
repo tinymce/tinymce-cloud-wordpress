@@ -65,7 +65,7 @@
                     <img width="22" height="22" style="vertical-align: middle;" src="<?php echo TENTP_URL . 'images/info_outline.png' ?>">
                 </a>
             </td>
-            <th scope="row">Block Drop:</th>
+            <th scope="row">Disable Drag &amp; Drop:</th>
             <td>
                 <?php
                 $isEnabled = array_key_exists('enable_powerpaste', $tinymce_enterprise_options) ? $tinymce_enterprise_options['enable_powerpaste'] : 'off';
