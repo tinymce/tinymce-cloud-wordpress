@@ -1,6 +1,6 @@
 <?php require_once "settings-page-helpers.php"; ?>
 <div style="margin-bottom: 20px; border: 2px solid #ccc; padding: 0 15px; width: 95%;">
-    <h2 class="title">TinyMCE Spellchecker Pro</h2>
+    <h2 class="title">TinyMCE Spell Checker Pro</h2>
     <p>
         Take advantage of spell checking as-you-type, with inline spell checking and a dialog mode that
         steps you through each error, offering a list of suggested corrections.  And by deploying SpellCheckerPro
