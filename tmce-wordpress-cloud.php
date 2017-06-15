@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: TinyMCE Cloud
-Plugin URI: https://www.ephox.com/
+Plugin URI: https://www.tinymce.com/wordpress
 Description: Turbocharge your content creation experience with premium tools enabling clean copy and paste, embedded media previews, as-you-type spell checking, accessibility best practices, and a more IDE-like code viewer.
 Version: 1.1
 Author: Ephox
-Author URI: https://www.ephox.com/
+Author URI: https://www.tinymce.com/wordpress
 Text Domain: tinymce_cloud_wordpress
 */
 
