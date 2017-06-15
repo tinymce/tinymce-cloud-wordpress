@@ -3,7 +3,7 @@
     <h2 class="title">TinyMCE Spell Checker Pro</h2>
     <p>
         Take advantage of spell checking as-you-type, with inline spell checking and a dialog mode that
-        steps you through each error, offering a list of suggested corrections.  And by deploying SpellCheckerPro
+        steps you through each error, offering a list of suggested corrections.  And by deploying Spell Checker Pro
         from our cloud service, you’ll never need to worry about server-side set-up or maintenance.
     </p>
     <p>
