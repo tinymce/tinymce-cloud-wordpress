@@ -12,7 +12,7 @@
         <strong><a href="https://www.tinymce.com/docs/plugins/tinymcespellchecker/" target="_blank">Documentation</a></strong>
     </p>
     <!-- Fix for compat3x in TinyMCE 4.5.3 on 1-Feb-2017 -->
-    <?php if(is474OrNewer()) : ?>
+    <?php if(isAtLeastVersion('4.7.0')) : ?>
         <table class="form-table">
             <tbody>
             <tr>

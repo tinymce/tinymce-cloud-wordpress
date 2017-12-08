@@ -3,7 +3,7 @@
 Plugin Name: TinyMCE Cloud
 Plugin URI: https://www.tinymce.com/wordpress
 Description: Turbocharge your content creation experience with premium tools enabling clean copy and paste, embedded media previews, as-you-type spell checking, accessibility best practices, and a more IDE-like code viewer.
-Version: 1.1
+Version: 1.2
 Author: Ephox
 Author URI: https://www.tinymce.com/wordpress
 Text Domain: tinymce_cloud_wordpress
@@ -15,11 +15,6 @@ if ( ! defined( 'TENTP_URL' ) ) define( 'TENTP_URL', plugin_dir_url( __FILE__ ) 
 register_activation_hook(__FILE__, 'tinymce_enterprise_activate');
 
 function tinymce_enterprise_activate () {
-    //check WP version to ensure this is compatible with TinyMCE included?
-//    global $wp_version;
-//    if(version_compare($wp_version, '4.4.2', '<')) {
-//        wp_die('This plugin requires WordPress 4.4.x or greater (TinyMCE v4.2.8) to function properly');
-//    }
     //create defaults for settings
     $tinymce_enterprise_options_array = array(
         'version' => '1.1',
@@ -77,9 +72,19 @@ function plugin_add_settings_link( $links ) {
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_" . $plugin, 'plugin_add_settings_link' );
 
-/* Which plugins do we actually load - only PowerPaste an option right now */
+/* Fix WP 4.9 admin page header policy change - https://developer.wordpress.org/reference/hooks/admin_referrer_policy/ */
+if (isAtLeastVersion('4.9.0')) {
+    add_filter( 'admin_referrer_policy', function(){
+        // return 'origin';
+        return 'strict-origin-when-cross-origin';
+    });
+}
+
+
+/* Which plugins do we actually load */
 require_once "general-helpers.php";
-$tinymce_enterprise_options = get_option('tinymce_enterprise_options');
+//$tinymce_enterprise_options = get_option('tinymce_enterprise_options');
+$tinymce_enterprise_options = get_option('tinymce_enterprise_options') ? get_option('tinymce_enterprise_options') : array();
 
 // Always need to load the actual JavaScript code from the cloud server
 require "plugin-loaders/script-loader.php";
@@ -98,10 +103,10 @@ if(shouldLoadPlugin('advcode', $tinymce_enterprise_options)){
 //    require "plugin-loaders/linkchecker.php";
 //}
 
-if(shouldLoadPlugin('mediaembed', $tinymce_enterprise_options) && (is474OrNewer())){
+if(shouldLoadPlugin('mediaembed', $tinymce_enterprise_options) && (isAtLeastVersion('4.7.0'))){
     require "plugin-loaders/media-embed.php";
 }
-if(shouldLoadPlugin('spellcheck', $tinymce_enterprise_options) && (is474OrNewer())){
+if(shouldLoadPlugin('spellcheck', $tinymce_enterprise_options) && (isAtLeastVersion('4.7.0'))){
     require "plugin-loaders/spelling.php";
 }
 

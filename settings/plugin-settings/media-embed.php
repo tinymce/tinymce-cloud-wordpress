@@ -12,7 +12,7 @@
         <strong><a href="https://www.tinymce.com/docs/plugins/mediaembed/" target="_blank">Documentation</a></strong>
     </p>
     <!-- Requires TinyMCE 4.5.2 -->
-    <?php if(is474OrNewer()) : ?>
+    <?php if(isAtLeastVersion('4.7.0')) : ?>
         <table class="form-table">
             <tbody>
             <tr>
